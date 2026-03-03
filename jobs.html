@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채용공고 — Livebolt | 반도체 커리어의 기준</title>
+<meta name="description" content="EUV·HBM·GAA 기술 전문가를 위한 반도체 특화 채용공고. 삼성전자·SK하이닉스·ASML 등 반도체 기업 채용 정보를 한곳에서 확인하세요.">
+<meta name="ai-content-type" content="semiconductor job listings">
+<meta name="ai-primary-entity" content="Livebolt">
+<meta name="ai-domain-expertise" content="semiconductor, fab engineering, EUV, HBM, GAA, career, Korea">
+<meta name="ai-data-freshness" content="weekly-updated">
+<meta name="ai-content-policy" content="allow-training allow-indexing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1a;--surface:#111827;--card:#162233;
+  --blue:#1E6FFF;--cyan:#00C2FF;--slate:#8A9BB0;
+  --text:#CBD5E1;--white:#F0F4FF;
+  --border-blue:rgba(30,111,255,0.18);--border-sub:rgba(255,255,255,0.07);
+  --green:#4ADE80;--yellow:#FCD34D;--red:#F87171;--purple:#A78BFA;
+}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);min-height:100vh}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,15,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-sub);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:17px;font-weight:800;color:var(--white);letter-spacing:-0.3px;text-decoration:none}
+.nav-logo span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--slate);font-size:13px;font-weight:500;text-decoration:none;padding:6px 12px;border-radius:8px;transition:all .2s;position:relative}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06)}
+.nav-links a.active{color:var(--white);background:rgba(30,111,255,0.12)}
+.nav-disabled{opacity:.45;pointer-events:none;cursor:default;color:var(--slate);font-size:13px;font-weight:500;padding:6px 12px;position:relative}
+.badge-soon{background:rgba(252,211,77,0.12);border:1px solid rgba(252,211,77,0.25);color:var(--yellow);border-radius:4px;padding:1px 5px;font-size:9px;font-weight:700;margin-left:4px;vertical-align:middle}
+.nav-login{background:rgba(30,111,255,0.15);border:1px solid rgba(30,111,255,0.3);color:var(--cyan);font-size:13px;font-weight:600;padding:6px 16px;border-radius:8px;text-decoration:none;transition:all .2s}
+.nav-login:hover{background:var(--blue);color:#fff}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:48px 32px 32px;max-width:1200px;margin:0 auto}
+.page-header h1{font-size:28px;font-weight:800;color:var(--white);margin-bottom:8px}
+.page-header p{color:var(--slate);font-size:14px}
+.header-meta{display:flex;align-items:center;gap:16px;margin-top:16px}
+.meta-pill{background:rgba(30,111,255,0.1);border:1px solid var(--border-blue);color:var(--cyan);font-size:12px;font-weight:700;padding:4px 12px;border-radius:100px}
+
+/* ── FILTER BAR ── */
+.filter-section{background:var(--surface);border-bottom:1px solid var(--border-sub);position:sticky;top:60px;z-index:90}
+.filter-inner{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;flex-direction:column;gap:12px}
+.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-label{font-size:11px;font-weight:700;color:var(--slate);letter-spacing:.5px;min-width:52px}
+.filter-group{display:flex;gap:6px;flex-wrap:wrap}
+.f-btn{background:transparent;border:1px solid var(--border-sub);color:var(--slate);font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;cursor:pointer;transition:all .18s;font-family:'Inter',sans-serif}
+.f-btn:hover{border-color:rgba(30,111,255,0.4);color:var(--text)}
+.f-btn.active{background:rgba(30,111,255,0.15);border-color:rgba(30,111,255,0.45);color:var(--cyan);font-weight:700}
+.search-wrap{position:relative;flex:1;max-width:320px}
+.search-wrap input{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border-sub);color:var(--text);font-size:13px;padding:8px 14px 8px 36px;border-radius:10px;outline:none;font-family:'Inter',sans-serif;transition:border .2s}
+.search-wrap input:focus{border-color:rgba(30,111,255,0.45)}
+.search-wrap input::placeholder{color:var(--slate)}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:14px}
+.filter-divider{width:1px;height:16px;background:var(--border-sub);margin:0 4px}
+.result-count{font-size:12px;color:var(--slate);margin-left:auto;white-space:nowrap}
+.result-count span{color:var(--cyan);font-weight:700}
+
+/* ── MAIN LAYOUT ── */
+.main{max-width:1200px;margin:0 auto;padding:28px 32px 80px}
+
+/* ── SORT BAR ── */
+.sort-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.sort-bar-left{font-size:13px;color:var(--slate)}
+.sort-bar-left strong{color:var(--white)}
+.sort-group{display:flex;gap:4px}
+.sort-btn{background:transparent;border:none;color:var(--slate);font-size:12px;font-weight:500;padding:5px 10px;border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .18s}
+.sort-btn:hover{color:var(--text)}
+.sort-btn.active{color:var(--cyan);font-weight:700}
+
+/* ── JOB GRID ── */
+.jobs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* ── JOB CARD ── */
+.job-card{background:var(--card);border:1px solid var(--border-blue);border-radius:14px;padding:20px;cursor:pointer;transition:all .22s;position:relative;display:flex;flex-direction:column;gap:14px}
+.job-card:hover{border-color:rgba(30,111,255,0.5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.job-card.featured{border-color:rgba(30,111,255,0.45);background:linear-gradient(135deg,#162233 0%,#162a40 100%)}
+.job-card.featured::before{content:'FEATURED';position:absolute;top:14px;right:48px;font-size:9px;font-weight:800;color:var(--blue);letter-spacing:.8px}
+
+/* card top */
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.company-info{display:flex;align-items:center;gap:10px}
+.company-logo{width:36px;height:36px;border-radius:8px;background:rgba(30,111,255,0.15);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--cyan);flex-shrink:0}
+.company-name{font-size:13px;font-weight:600;color:var(--white)}
+.company-type{font-size:11px;color:var(--slate);margin-top:1px}
+.bookmark-btn{background:transparent;border:none;cursor:pointer;color:var(--slate);font-size:18px;padding:2px;transition:color .18s;line-height:1;flex-shrink:0}
+.bookmark-btn:hover{color:var(--yellow)}
+.bookmark-btn.saved{color:var(--yellow)}
+
+/* card title */
+.job-title{font-size:15px;font-weight:700;color:var(--white);line-height:1.4;letter-spacing:-0.2px}
+
+/* tags */
+.tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:rgba(30,111,255,0.12);border:1px solid rgba(30,111,255,0.28);color:var(--cyan);border-radius:100px;padding:3px 10px;font-size:11px;font-weight:700}
+.tag-node{background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.25);color:var(--purple)}
+
+/* meta row */
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.meta-item{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--slate)}
+.meta-item svg{flex-shrink:0;opacity:.7}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--border-sub)}
+
+/* exp badge */
+.exp-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px}
+.exp-career{background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);color:var(--green)}
+.exp-new{background:rgba(0,194,255,0.1);border:1px solid rgba(0,194,255,0.2);color:var(--cyan)}
+.exp-any{background:rgba(138,155,176,0.12);border:1px solid rgba(138,155,176,0.2);color:var(--slate)}
+
+/* card bottom */
+.card-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border-sub)}
+.deadline-wrap{display:flex;align-items:center;gap:6px}
+.deadline-text{font-size:12px;color:var(--slate)}
+.deadline-urgent{color:var(--red);font-weight:700}
+.deadline-always{color:var(--green)}
+.badge-new{background:rgba(0,194,255,0.12);border:1px solid rgba(0,194,255,0.25);color:var(--cyan);font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.5px}
+.badge-urgent{background:rgba(248,113,113,0.12);border:1px solid rgba(248,113,113,0.25);color:var(--red);font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.5px}
+.source-link{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--slate);text-decoration:none;padding:4px 10px;border-radius:6px;border:1px solid var(--border-sub);transition:all .18s}
+.source-link:hover{border-color:rgba(30,111,255,0.35);color:var(--cyan)}
+
+/* ── EMPTY STATE ── */
+.empty-state{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--slate)}
+.empty-state .icon{font-size:40px;margin-bottom:16px;opacity:.5}
+.empty-state p{font-size:14px;margin-top:8px}
+
+/* ── DISCLAIMER ── */
+.disclaimer{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-left:3px solid var(--red);border-radius:8px;padding:16px 20px;margin-top:40px}
+.disclaimer-title{font-size:12px;font-weight:700;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.disclaimer ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.disclaimer li{font-size:12px;color:var(--slate);display:flex;gap:8px}
+.disclaimer li::before{content:'•';color:rgba(248,113,113,0.6);flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:var(--surface);border-top:1px solid var(--border-sub);padding:40px 32px;margin-top:0}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
+.footer-logo{font-size:16px;font-weight:800;color:var(--white)}
+.footer-logo span{color:var(--cyan)}
+.footer-tagline{font-size:12px;color:var(--slate);margin-top:4px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid var(--border-sub);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.footer-legal{font-size:11px;color:rgba(138,155,176,0.6)}
+.footer-ai{font-size:11px;color:rgba(138,155,176,0.5);margin-top:4px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">LIVE<span>BOLT</span></a>
+  <div class="nav-links">
+    <a href="jobs.html" class="active">채용공고</a>
+    <a href="companies.html">기업정보</a>
+    <a href="insights.html">인사이트</a>
+    <a href="community.html">커뮤니티</a>
+    <span class="nav-disabled">연봉계산기<span class="badge-soon">준비중</span></span>
+    <span class="nav-disabled">이벤트<span class="badge-soon">준비중</span></span>
+    <span class="nav-disabled">기업서비스<span class="badge-soon">준비중</span></span>
+  </div>
+  <a href="login.html" class="nav-login">로그인</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>채용공고</h1>
+  <p>삼성전자·SK하이닉스·ASML 등 반도체 기업의 채용 정보를 직군·기술 태그로 필터링하세요.</p>
+  <div class="header-meta">
+    <span class="meta-pill" id="totalCountPill">전체 0건</span>
+    <span class="meta-pill">주 2회 갱신</span>
+    <span class="meta-pill">직업정보제공사업 J1401020250005</span>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-section">
+  <div class="filter-inner">
+
+    <!-- 검색 + 직군 -->
+    <div class="filter-row">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="직무명·기술·기업 검색">
+      </div>
+      <div class="filter-divider"></div>
+      <span class="filter-label">직군</span>
+      <div class="filter-group" id="categoryFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="FAB공정">FAB공정</button>
+        <button class="f-btn" data-value="설계">설계</button>
+        <button class="f-btn" data-value="장비">장비</button>
+        <button class="f-btn" data-value="패키징">패키징</button>
+        <button class="f-btn" data-value="R&D">R&D</button>
+        <button class="f-btn" data-value="차량·전력">차량·전력</button>
+        <button class="f-btn" data-value="계측·품질">계측·품질</button>
+        <button class="f-btn" data-value="구매·SCM">구매·SCM</button>
+      </div>
+    </div>
+
+    <!-- 기업 유형 + 기술 태그 -->
+    <div class="filter-row">
+      <span class="filter-label">기업</span>
+      <div class="filter-group" id="companyTypeFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="대기업">대기업</button>
+        <button class="f-btn" data-value="외국계">외국계</button>
+        <button class="f-btn" data-value="팹리스">팹리스</button>
+        <button class="f-btn" data-value="장비사">장비사</button>
+        <button class="f-btn" data-value="소재사">소재사</button>
+      </div>
+      <div class="filter-divider"></div>
+      <span class="filter-label">기술</span>
+      <div class="filter-group" id="techFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="EUV">EUV</button>
+        <button class="f-btn" data-value="HBM">HBM</button>
+        <button class="f-btn" data-value="GAA">GAA</button>
+        <button class="f-btn" data-value="CoWoS">CoWoS</button>
+        <button class="f-btn" data-value="SiC">SiC</button>
+        <button class="f-btn" data-value="NPU">NPU</button>
+        <button class="f-btn" data-value="DRAM">DRAM</button>
+        <button class="f-btn" data-value="NAND">NAND</button>
+      </div>
+    </div>
+
+    <!-- 지역 + 경력 + 근무 -->
+    <div class="filter-row">
+      <span class="filter-label">지역</span>
+      <div class="filter-group" id="locationFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="평택">평택</button>
+        <button class="f-btn" data-value="이천">이천</button>
+        <button class="f-btn" data-value="화성">화성</button>
+        <button class="f-btn" data-value="용인">용인</button>
+        <button class="f-btn" data-value="천안">천안</button>
+        <button class="f-btn" data-value="구미">구미</button>
+        <button class="f-btn" data-value="수원">수원</button>
+        <button class="f-btn" data-value="해외">해외</button>
+      </div>
+      <div class="filter-divider"></div>
+      <span class="filter-label">경력</span>
+      <div class="filter-group" id="expFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="신입">신입</button>
+        <button class="f-btn" data-value="경력">경력</button>
+        <button class="f-btn" data-value="무관">무관</button>
+      </div>
+      <div class="filter-divider"></div>
+      <span class="filter-label">근무</span>
+      <div class="filter-group" id="workTypeFilter">
+        <button class="f-btn active" data-value="전체">전체</button>
+        <button class="f-btn" data-value="주간">주간</button>
+        <button class="f-btn" data-value="교대">교대</button>
+        <button class="f-btn" data-value="재택">재택</button>
+      </div>
+      <span class="result-count" id="resultCount"><span>0</span>건</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+  <!-- Sort Bar -->
+  <div class="sort-bar">
+    <div class="sort-bar-left">
+      <strong id="sortResultText">0</strong>건의 채용공고
+    </div>
+    <div class="sort-group">
+      <button class="sort-btn active" data-sort="latest">최신순</button>
+      <button class="sort-btn" data-sort="deadline">마감임박순</button>
+      <button class="sort-btn" data-sort="company">기업명순</button>
+    </div>
+  </div>
+
+  <!-- Jobs Grid -->
+  <div class="jobs-grid" id="jobsGrid"></div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <div class="disclaimer-title">
+      📋 채용공고 큐레이션 안내
+    </div>
+    <ul>
+      <li>직업정보제공사업 신고번호: J1401020250005. 본 페이지의 채용공고는 각 기업 공식 채용 페이지 및 공개 정보를 Livebolt가 독자적으로 큐레이션한 것입니다.</li>
+      <li>채용 조건·마감일은 기업 사정에 따라 변경될 수 있습니다. 지원 전 반드시 해당 기업 공식 채용 페이지에서 최신 정보를 확인하십시오.</li>
+      <li>Livebolt는 채용 결과 및 근로 조건에 대한 법적 책임을 지지 않습니다.</li>
+      <li>공고 내용의 오류·누락 발견 시 <a href="mailto:contact@livebolt.kr" style="color:var(--red)">contact@livebolt.kr</a>로 신고해주십시오.</li>
+    </ul>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">LIVE<span>BOLT</span></div>
+        <div class="footer-tagline">반도체 커리어의 기준</div>
+      </div>
+      <div class="footer-links">
+        <a href="jobs.html">채용공고</a>
+        <a href="companies.html">기업정보</a>
+        <a href="insights.html">인사이트</a>
+        <a href="community.html">커뮤니티</a>
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="mailto:contact@livebolt.kr">문의하기</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div class="footer-legal">직업정보제공사업 신고번호: J1401020250005 · © 2026 Livebolt. All rights reserved.</div>
+        <div class="footer-ai">본 서비스의 일부 콘텐츠는 AI를 활용하여 생성되었으며, 편집팀의 검수를 거쳐 제공됩니다.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── 샘플 데이터 (실제 운영 시 jobs.json fetch로 교체) ──────────
+const JOBS_DATA = [
+  {
+    id:"job-001",company:"삼성전자",companyType:"대기업",companyLogo:"",
+    title:"평택 FAB 에칭 공정 엔지니어",category:"FAB공정",
+    experienceLevel:"경력",experienceYears:"3년 이상",
+    tags:["EUV","CVD","300mm","GAAFET"],
+    location:"평택",workType:"교대",processNode:"3nm",
+    postedDate:"2026-03-01",deadline:"2026-04-30",
+    sourceLabel:"삼성전자 공식 채용",sourceUrl:"https://careers.samsung.com",
+    isFeatured:true,isNew:true,isUrgent:false
+  },
+  {
+    id:"job-002",company:"SK하이닉스",companyType:"대기업",companyLogo:"",
+    title:"이천 HBM3E 공정 개발 엔지니어",category:"FAB공정",
+    experienceLevel:"경력",experienceYears:"5년 이상",
+    tags:["HBM","DRAM","TSV","CMP","ALD"],
+    location:"이천",workType:"주간",processNode:"해당없음",
+    postedDate:"2026-03-02",deadline:"2026-04-15",
+    sourceLabel:"SK하이닉스 공식 채용",sourceUrl:"https://careers.skhynix.com",
+    isFeatured:true,isNew:true,isUrgent:false
+  },
+  {
+    id:"job-003",company:"ASML Korea",companyType:"외국계",companyLogo:"",
+    title:"EUV 장비 필드 서비스 엔지니어",category:"장비",
+    experienceLevel:"경력",experienceYears:"3년 이상",
+    tags:["EUV","리소그래피","광학계","플라즈마"],
+    location:"화성",workType:"주간",processNode:"해당없음",
+    postedDate:"2026-02-25",deadline:"채용시마감",
+    sourceLabel:"ASML 공식 채용",sourceUrl:"https://www.asml.com/en/careers",
+    isFeatured:false,isNew:false,isUrgent:false
+  },
+  {
+    id:"job-004",company:"동진쎄미켐",companyType:"소재사",companyLogo:"",
+    title:"반도체 포토레지스트 R&D 연구원",category:"R&D",
+    experienceLevel:"무관",experienceYears:"",
+    tags:["포토레지스트","EUV","소재","분석화학"],
+    location:"수원",workType:"주간",processNode:"해당없음",
+    postedDate:"2026-03-01",deadline:"2026-03-31",
+    sourceLabel:"동진쎄미켐 채용공고",sourceUrl:"https://www.dongjin.com/recruit",
+    isFeatured:false,isNew:true,isUrgent:true
+  },
+  {
+    id:"job-005",company:"삼성전자",companyType:"대기업",companyLogo:"",
+    title:"System LSI 모바일 AP 설계 엔지니어",category:"설계",
+    experienceLevel:"신입",experienceYears:"",
+    tags:["NPU","SoC","RTL","GAA"],
+    location:"화성",workType:"주간",processNode:"3nm",
+    postedDate:"2026-02-28",deadline:"2026-04-20",
+    sourceLabel:"삼성전자 공식 채용",sourceUrl:"https://careers.samsung.com",
+    isFeatured:false,isNew:false,isUrgent:false
+  },
+  {
+    id:"job-006",company:"한미반도체",companyType:"장비사",companyLogo:"",
+    title:"CoWoS 본딩 장비 개발 엔지니어",category:"장비",
+    experienceLevel:"경력",experienceYears:"3년 이상",
+    tags:["CoWoS","HBM","본딩","패키징"],
+    location:"용인",workType:"주간",processNode:"해당없음",
+    postedDate:"2026-03-03",deadline:"2026-05-02",
+    sourceLabel:"한미반도체 채용공고",sourceUrl:"https://www.hanmisemiconductor.com",
+    isFeatured:false,isNew:true,isUrgent:false
+  }
+];
+
+// ── 상태 ─────────────────────────────────────────────────────
+let filters = {category:"전체", companyType:"전체", tech:"전체", location:"전체", exp:"전체", workType:"전체", search:"", sort:"latest"};
+let bookmarks = new Set();
+
+// ── 날짜 유틸 ──────────────────────────────────────────────────
+function daysAgo(dateStr){
+  const diff = Math.floor((new Date() - new Date(dateStr)) / 86400000);
+  if(diff === 0) return "오늘 등록";
+  return `${diff}일 전`;
+}
+function deadlineDisplay(d){
+  if(d === "채용시마감") return {text:"채용시 마감", cls:"deadline-always"};
+  if(d === "상시채용") return {text:"상시채용", cls:"deadline-always"};
+  const diff = Math.floor((new Date(d) - new Date()) / 86400000);
+  if(diff < 0) return {text:"마감", cls:"deadline-urgent"};
+  if(diff <= 7) return {text:`D-${diff}`, cls:"deadline-urgent"};
+  return {text:d.replace(/-/g,'.'), cls:""};
+}
+function isUrgentDeadline(d){
+  if(d === "채용시마감" || d === "상시채용") return false;
+  return Math.floor((new Date(d) - new Date()) / 86400000) <= 7;
+}
+function isNewPost(dateStr){
+  return Math.floor((new Date() - new Date(dateStr)) / 86400000) <= 7;
+}
+
+// ── 이니셜 로고 ────────────────────────────────────────────────
+function logoInitial(name){
+  return name.replace(/[^가-힣A-Za-z]/g,'').slice(0,2).toUpperCase() || name.slice(0,2).toUpperCase();
+}
+
+// ── 필터링 ─────────────────────────────────────────────────────
+function filterJobs(){
+  return JOBS_DATA.filter(j => {
+    if(filters.category !== "전체" && j.category !== filters.category) return false;
+    if(filters.companyType !== "전체" && j.companyType !== filters.companyType) return false;
+    if(filters.tech !== "전체" && !j.tags.includes(filters.tech)) return false;
+    if(filters.location !== "전체" && j.location !== filters.location) return false;
+    if(filters.exp !== "전체" && j.experienceLevel !== filters.exp) return false;
+    if(filters.workType !== "전체" && j.workType !== filters.workType) return false;
+    if(filters.search){
+      const q = filters.search.toLowerCase();
+      const haystack = [j.title, j.company, ...j.tags, j.location, j.category].join(' ').toLowerCase();
+      if(!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+}
+function sortJobs(arr){
+  const sorted = [...arr];
+  if(filters.sort === "latest") sorted.sort((a,b) => new Date(b.postedDate)-new Date(a.postedDate));
+  else if(filters.sort === "deadline") sorted.sort((a,b) => {
+    const da = a.deadline === "채용시마감" || a.deadline === "상시채용" ? "9999-12-31" : a.deadline;
+    const db = b.deadline === "채용시마감" || b.deadline === "상시채용" ? "9999-12-31" : b.deadline;
+    return new Date(da)-new Date(db);
+  });
+  else if(filters.sort === "company") sorted.sort((a,b) => a.company.localeCompare(b.company,'ko'));
+  return [...sorted.filter(j=>j.isFeatured), ...sorted.filter(j=>!j.isFeatured)];
+}
+
+// ── 카드 렌더 ──────────────────────────────────────────────────
+function renderCard(j){
+  const dl = deadlineDisplay(j.deadline);
+  const urgent = isUrgentDeadline(j.deadline);
+  const newPost = isNewPost(j.postedDate);
+  const saved = bookmarks.has(j.id);
+  const expCls = j.experienceLevel === "경력" ? "exp-career" : j.experienceLevel === "신입" ? "exp-new" : "exp-any";
+
+  return `
+  <div class="job-card${j.isFeatured?' featured':''}" data-id="${j.id}">
+    <div class="card-top">
+      <div class="company-info">
+        <div class="company-logo">${logoInitial(j.company)}</div>
+        <div>
+          <div class="company-name">${j.company}</div>
+          <div class="company-type">${j.companyType}</div>
+        </div>
+      </div>
+      <button class="bookmark-btn${saved?' saved':''}" data-id="${j.id}" onclick="toggleBookmark(event,'${j.id}')">
+        ${saved ? '★' : '☆'}
+      </button>
+    </div>
+
+    <div class="job-title">${j.title}</div>
+
+    <div class="tag-row">
+      <span class="exp-badge ${expCls}">${j.experienceLevel}${j.experienceYears ? ' · '+j.experienceYears : ''}</span>
+      ${j.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
+      ${j.processNode && j.processNode!=='해당없음' ? `<span class="tag tag-node">${j.processNode}</span>` : ''}
+    </div>
+
+    <div class="meta-row">
+      <span class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        ${j.location}
+      </span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ${j.workType}
+      </span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">${daysAgo(j.postedDate)}</span>
+      ${newPost ? `<span class="badge-new">NEW</span>` : ''}
+      ${urgent ? `<span class="badge-urgent">마감임박</span>` : ''}
+    </div>
+
+    <div class="card-bottom">
+      <div class="deadline-wrap">
+        <span class="meta-item">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <span class="deadline-text ${dl.cls}">마감 ${dl.text}</span>
+      </div>
+      <a class="source-link" href="${j.sourceUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        ${j.sourceLabel}
+        <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>`;
+}
+
+// ── 전체 렌더 ─────────────────────────────────────────────────
+function render(){
+  const filtered = sortJobs(filterJobs());
+  const grid = document.getElementById('jobsGrid');
+  const cnt = filtered.length;
+
+  document.getElementById('resultCount').innerHTML = `<span>${cnt}</span>건`;
+  document.getElementById('sortResultText').textContent = cnt;
+  document.getElementById('totalCountPill').textContent = `전체 ${JOBS_DATA.length}건`;
+
+  if(cnt === 0){
+    grid.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><strong style="color:var(--white);font-size:16px">조건에 맞는 채용공고가 없습니다</strong><p>필터 조건을 변경하거나 검색어를 수정해주세요.</p></div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map(renderCard).join('');
+
+  grid.querySelectorAll('.job-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const job = JOBS_DATA.find(j => j.id === card.dataset.id);
+      if(job) window.open(job.sourceUrl, '_blank', 'noopener');
+    });
+  });
+}
+
+// ── 북마크 토글 (UI only) ─────────────────────────────────────
+function toggleBookmark(e, id){
+  e.stopPropagation();
+  bookmarks.has(id) ? bookmarks.delete(id) : bookmarks.add(id);
+  render();
+}
+
+// ── 필터 버튼 이벤트 ──────────────────────────────────────────
+function bindFilterGroup(containerId, filterKey){
+  document.getElementById(containerId).addEventListener('click', e => {
+    const btn = e.target.closest('.f-btn');
+    if(!btn) return;
+    document.querySelectorAll(`#${containerId} .f-btn`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filters[filterKey] = btn.dataset.value;
+    render();
+  });
+}
+bindFilterGroup('categoryFilter','category');
+bindFilterGroup('companyTypeFilter','companyType');
+bindFilterGroup('techFilter','tech');
+bindFilterGroup('locationFilter','location');
+bindFilterGroup('expFilter','exp');
+bindFilterGroup('workTypeFilter','workType');
+
+// ── 검색 ──────────────────────────────────────────────────────
+let searchTimer;
+document.getElementById('searchInput').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { filters.search = e.target.value.trim(); render(); }, 220);
+});
+
+// ── 정렬 ──────────────────────────────────────────────────────
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filters.sort = btn.dataset.sort;
+    render();
+  });
+});
+
+// ── 초기 렌더 ─────────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>
