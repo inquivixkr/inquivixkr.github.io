@@ -1,0 +1,29 @@
+[
+  {
+    "id": "daily-2026-03-10-us-euv",
+    "category": "채용동향",
+    "title": "미국, 신규 EUV 장비 투자 계획",
+    "summary": "Livebolt AI 요약: 미국 대형 패운드리가 EUV 장비 확장을 위해 2026년 예산을 승인하며, 반도체 공급망 긴축 완화 조치가 예상됩니다.",
+    "source": "Bloomberg",
+    "url": "https://news.example.com/us-euv-expansion",
+    "published": "2026-03-10"
+  },
+  {
+    "id": "daily-2026-03-10-eu-sic",
+    "category": "업계 최신 뉴스",
+    "title": "유럽, SiC 수출 허브 전략 발표",
+    "summary": "Livebolt AI 요약: 유럽연합이 SiC 소재/장비 수출 전담 허브를 선포하며 글로벌 파운드리 파트너십을 강화하고 있습니다.",
+    "source": "Reuters",
+    "url": "https://news.example.com/eu-sic-hub",
+    "published": "2026-03-10"
+  },
+  {
+    "id": "daily-2026-03-10-tw-gaa",
+    "category": "기술자료",
+    "title": "대만 팹, GAA 전환 가속화",
+    "summary": "Livebolt AI 요약: 대만 주요 파운드리들이 GAA 전용 생산 라인을 3nm 이상으로 확대하며 공급망 유연성을 강화하고 있습니다.",
+    "source": "Digitimes",
+    "url": "https://news.example.com/taiwan-gaa-shift",
+    "published": "2026-03-10"
+  }
+]

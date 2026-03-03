@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>기업정보 — Livebolt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Livebolt는 반도체 기업 데이터를 브랜드 톤앤매너로 정리하고, 기업회원이 직접 정보를 추가할 수 있도록 템플릿을 제공합니다.">
+<meta name="ai-content-type" content="company insights">
+<meta name="ai-primary-entity" content="Livebolt">
+<meta name="ai-domain-expertise" content="semiconductor, corporate data, CRM">
+<meta name="ai-data-freshness" content="weekly-updated">
+<meta name="ai-content-language" content="ko-KR">
+<meta name="ai-content-policy" content="allow-training allow-indexing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050810;--surface:#0f172a;--panel:#111c2b;--highlight:#1e6fff;--text:#d1d5db;--accent:#00c2ff;--border:rgba(255,255,255,0.07);}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:var(--bg);color:var(--text);}
+.container{max-width:1200px;margin:0 auto;padding:0 24px 64px;}
+nav{background:rgba(5,8,16,0.95);border-bottom:1px solid rgba(255,255,255,0.1);position:sticky;top:0;z-index:10;}
+.nav-inner{display:flex;align-items:center;gap:12px;height:64px;}
+.nav-inner .logo{font-size:20px;font-weight:800;letter-spacing:-0.3px;}
+.nav-inner .logo span{color:var(--accent);}
+.nav-right{margin-left:auto;display:flex;gap:10px;}
+.nav-link{color:var(--text);font-size:13px;padding:6px 14px;border-radius:10px;border:1px solid transparent;}
+.nav-link:hover{border-color:rgba(255,255,255,0.2);}
+.hero{padding:64px 0 40px;}
+.hero h1{font-size:42px;line-height:1.2;font-weight:800;}
+.hero p{margin-top:12px;font-size:16px;color:rgba(209,213,219,0.85);max-width:640px;}
+.hero .cta-group{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary,.btn-ghost{padding:12px 26px;border-radius:999px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:1px solid transparent;}
+.btn-primary{background:var(--highlight);color:#fff;border:none;}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.2);}
+.section{padding:64px 0;}
+.section-title{font-size:32px;font-weight:800;margin-bottom:6px;}
+.section-desc{color:rgba(209,213,219,0.85);margin-bottom:24px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:220px;}
+.card h3{font-size:18px;font-weight:700;}
+.card p{font-size:14px;line-height:1.6;color:rgba(209,213,219,0.9);}
+.template{border:1px dashed rgba(255,255,255,0.2);padding:20px;border-radius:16px;margin-top:24px;}
+.template h4{font-size:16px;font-weight:600;margin-bottom:12px;}
+.template ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.template li{display:flex;gap:10px;font-size:13px;}
+.template li::before{content:'▹';color:var(--highlight);}
+.footer{background:var(--surface);border-top:1px solid rgba(255,255,255,0.08);padding:48px 24px 32px;margin-top:32px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;}
+.footer-links a{color:var(--text);}
+.footer-legal{font-size:12px;color:rgba(209,213,219,0.7);}
+.btn-update{margin-top:24px;border:none;background:transparent;color:var(--accent);font-size:14px;text-decoration:underline;cursor:pointer;}
+@media (max-width:768px){.nav-inner{flex-wrap:wrap;height:auto;}.hero h1{font-size:32px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Live<span>Bolt</span></div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">홈</a>
+      <a href="jobs.html" class="nav-link">채용공고</a>
+      <a href="insights.html" class="nav-link">인사이트</a>
+      <a href="community.html" class="nav-link">커뮤니티</a>
+    </div>
+    <div class="nav-right">
+      <a href="signup.html" class="btn-primary">회원가입</a>
+      <a href="login.html" class="btn-ghost">로그인</a>
+    </div>
+  </div>
+</nav>
+<main class="container">
+  <section class="hero">
+    <h1>Livebolt 기업정보</h1>
+    <p>브랜드 톤앤매너에 맞춰 정리된 기업정보를 제공하며, 기업회원이 스스로 데이터를 업데이트하고 추가할 수 있는 템플릿을 제공합니다.</p>
+    <div class="cta-group">
+      <a href="#add-info" class="btn-primary">기업정보 직접 추가</a>
+      <a href="#update" class="btn-ghost">정보 수정 요청</a>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-title">Livebolt 기업 템플릿</div>
+    <div class="section-desc">간단한 항목을 채워 주시면 관리자 승인 후 바로 기업 프로필에 반영됩니다.</div>
+    <div class="grid">
+      <div class="card">
+        <h3>기본 정보</h3>
+        <p>회사명, 대표자, 본사 위치, 설립연도 등 핵심 정보를 균일한 톤으로 정리합니다.</p>
+      </div>
+      <div class="card">
+        <h3>포지션·직군</h3>
+        <p>FAB 공정, 장비·소재, 설계·R&D 등 채용 중인 주요 직군을 명료하게 보여줍니다.</p>
+      </div>
+      <div class="card">
+        <h3>채용·연봉 트렌드</h3>
+        <p>기준 연봉 범위, 교대/주간 비율, 특수 수당 등 정보를 포함해 실무자가 참고할 수 있게 구성합니다.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="add-info">
+    <div class="panel" style="background:var(--panel);">
+      <h3>기업회원 정보 직접 추가</h3>
+      <p>다음 항목을 채워 이메일로 보내주시면 Livebolt 실무팀이 확인 후 프로필에 반영합니다.</p>
+      <div class="template">
+        <h4>추가 템플릿</h4>
+        <ul>
+          <li>기업명 · 대표자 · 본사/지사</li>
+          <li>주요 채용 직군 · 공정 노드</li>
+          <li>워킹 타입(교대/주간) · 주요 수당</li>
+          <li>대표 채용 페이지 링크/구직 공고</li>
+        </ul>
+        <p class="notice">작성 후 바로 <a href="mailto:contact@livebolt.kr" class="link-btn">contact@livebolt.kr</a>로 이메일을 보내주세요.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="update">
+    <div class="panel">
+      <h3>기업정보 수정 요청</h3>
+      <p>이미 등록된 기업 프로필을 업데이트하려면 아래 버튼을 눌러 요청해주세요. 담당자가 내용을 검토 후 반영합니다.</p>
+      <a class="link-btn" href="mailto:contact@livebolt.kr?subject=기업정보 수정 요청">기업정보 수정 요청하기</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">Live<span>Bolt</span></div>
+      <div class="footer-slogan">반도체 커리어의 기준</div>
+    </div>
+    <div class="footer-links">
+      <a href="terms.html">이용약관</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="mailto:contact@livebolt.kr">contact@livebolt.kr</a>
+    </div>
+    <div class="footer-legal">직업정보제공사업 신고번호 J1401020250005 · © 2026 Livebolt</div>
+  </div>
+</footer>
+</body>
+</html>

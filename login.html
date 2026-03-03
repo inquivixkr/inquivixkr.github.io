@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>로그인 — Livebolt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Livebolt 로그인 페이지 — 최소 개인정보 수집 안내 포함">
+<meta name="ai-content-type" content="login page">
+<meta name="ai-primary-entity" content="Livebolt">
+<meta name="ai-domain-expertise" content="careers, semiconductor, privacy">
+<meta name="ai-data-freshness" content="weekly-updated">
+<meta name="ai-content-language" content="ko-KR">
+<meta name="ai-content-policy" content="allow-training allow-indexing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="llm-meta.js"></script>
+<style>
+:root{--bg:#0a0f1a;--surface:#111827;--card:#1f2937;--border:#2f3a4a;--text:#d1d5db;--white:#f8fafc;--primary:#1e6fff;--cyan:#00c2ff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+.page-content{flex:1;display:flex;align-items:center;justify-content:center;padding:32px;}
+body{background:linear-gradient(180deg,#070c16,#0f172a);color:var(--text);min-height:100vh;display:flex;flex-direction:column;}
+.wrapper{max-width:480px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:0 20px 60px rgba(0,0,0,0.45);}
+.logo{font-size:26px;font-weight:800;text-transform:uppercase;color:var(--white);}
+.logo span{color:var(--cyan);}
+.description{margin-top:12px;font-size:15px;color:var(--text);}
+.form{margin-top:28px;display:flex;flex-direction:column;gap:16px;}
+label{font-size:12px;color:var(--text);text-transform:uppercase;letter-spacing:1px;}
+input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(15,23,42,0.9);color:var(--white);font-size:14px;}
+button{width:100%;padding:12px 14px;border-radius:12px;border:none;background:var(--primary);color:#fff;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+button:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(30,111,255,0.25);}
+.privacy-card{margin-top:28px;background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px;}
+.privacy-card h3{font-size:16px;color:var(--white);margin-bottom:8px;}
+.privacy-card p{font-size:13px;line-height:1.6;color:var(--text);margin-bottom:8px;}
+.privacy-list{list-style:none;padding-left:0;display:flex;flex-direction:column;gap:6px;}
+.privacy-list li{display:flex;gap:8px;font-size:13px;color:var(--text);}
+.privacy-list li::before{content:'•';color:var(--cyan);}
+.small-note{font-size:12px;color:rgba(255,255,255,0.6);margin-top:12px;}
+.footer-note{margin-top:20px;font-size:12px;color:var(--text);display:flex;flex-wrap:wrap;gap:8px;}
+.footer-note a{color:var(--cyan);text-decoration:none;}
+footer{background:var(--surface);border-top:1px solid rgba(255,255,255,0.08);padding:48px 24px;}
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:24px;}
+.footer-logo{font-size:20px;font-weight:800;color:#fff;}
+.footer-logo span{color:var(--cyan);}
+.footer-slogan{font-size:12px;color:var(--text);margin-top:4px;}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--text);}
+.footer-links a{color:var(--text);text-decoration:none;}
+.footer-links a:hover{color:#fff;}
+.footer-divider{height:1px;background:rgba(255,255,255,0.08);margin-bottom:24px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.footer-legal{font-size:11px;color:rgba(138,155,176,0.6);}
+.footer-copy{font-size:12px;color:rgba(138,155,176,0.8);}
+.ai-notice{margin-top:20px;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 16px;font-size:12px;color:var(--text);background:rgba(15,23,42,0.75);display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.ai-notice a{color:var(--cyan);font-weight:600;}
+@media (max-width:520px){body{padding:16px;} .wrapper{padding:24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="symbolGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1E6FFF"/>
+            <stop offset="100%" stop-color="#00C2FF"/>
+          </linearGradient>
+          <linearGradient id="dotGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00C2FF" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#1E6FFF" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#symbolGrad)"/>
+        <rect x="4.5" y="6.5" width="8" height="8" rx="2.5" fill="white"/>
+        <rect x="15.5" y="6.5" width="8" height="8" rx="2.5" fill="white"/>
+        <rect x="4.5" y="17.5" width="8" height="8" rx="2.5" fill="url(#dotGrad)" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+        <rect x="15.5" y="17.5" width="8" height="8" rx="2.5" fill="white"/>
+        <text x="36" y="22.5" font-family="Inter, sans-serif" font-weight="800" font-size="17" letter-spacing="-0.4" fill="#F0F4FF">Live</text>
+        <text x="71" y="22.5" font-family="Inter, sans-serif" font-weight="800" font-size="17" letter-spacing="-0.4" fill="#00C2FF">Bolt</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="jobs.html" class="nav-link">채용공고</a>
+      <a href="companies.html" class="nav-link">기업정보</a>
+      <a href="insights.html" class="nav-link">인사이트</a>
+      <a href="community.html" class="nav-link">커뮤니티</a>
+      <span class="nav-link disabled">연봉계산기<span class="nav-badge">준비중</span></span>
+      <span class="nav-link disabled">이벤트<span class="nav-badge">준비중</span></span>
+      <span class="nav-link disabled">기업서비스<span class="nav-badge">준비중</span></span>
+    </div>
+    <div class="nav-right">
+      <a href="signup.html" class="btn-login">회원가입</a>
+      <a href="login.html" class="btn-login">로그인</a>
+    </div>
+  </div>
+</nav>
+<div class="page-content">
+<div class="wrapper">
+  <div class="logo">Live<span>Bolt</span></div>
+  <div class="description">반도체 엔지니어를 위한 커리어 플랫폼 로그인입니다. 안전한 접근을 위해 최소한의 정보만 수집합니다.</div>
+  <form class="form">
+    <label for="email">이메일 주소</label>
+    <input type="email" id="email" placeholder="example@livebolt.kr" required>
+    <label for="password">비밀번호</label>
+    <input type="password" id="password" placeholder="********" required>
+    <button type="submit">로그인</button>
+  </form>
+  <div class="privacy-card">
+    <h3>개인정보 최소 수집 안내</h3>
+    <p>Livebolt는 로그인 시 아래 정보만 수집하며, 제3자 제공 없이 내부 시스템에서만 안전하게 처리합니다.</p>
+    <ul class="privacy-list">
+      <li>이메일 주소 — 인증 및 알림용</li>
+      <li>비밀번호 — 암호화 저장(복호화 불가)</li>
+      <li>접속 IP/로그인 시간 — 보안 로그 및 이상징후 탐지</li>
+    </ul>
+    <p class="small-note">필수 정보 외에는 어떠한 개인정보도 저장하지 않으며, 언제든 <a href="privacy.html">개인정보처리방침</a>을 통해 삭제 요청할 수 있습니다.</p>
+  </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">LIVE<span>BOLT</span></div>
+        <div class="footer-slogan">반도체 커리어의 기준</div>
+      </div>
+      <div class="footer-links">
+        <a href="jobs.html">채용공고</a>
+        <a href="companies.html">기업정보</a>
+        <a href="insights.html">인사이트</a>
+        <a href="community.html">커뮤니티</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="terms.html">이용약관</a> ·
+        <a href="privacy.html">개인정보처리방침</a> ·
+        <a href="mailto:contact@livebolt.kr">contact@livebolt.kr</a><br>
+        직업정보제공사업 신고번호: J1401020250005
+      </div>
+      <div class="footer-copy">© 2026 Livebolt. All rights reserved.</div>
+    </div>
+    <div class="ai-notice">
+      <span>일부 콘텐츠는 AI를 활용하여 생성되었으며, 편집팀이 검수를 거쳐 제공합니다.</span>
+      <a href="privacy.html">개인정보처리방침</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

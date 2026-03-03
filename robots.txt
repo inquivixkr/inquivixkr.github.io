@@ -1,0 +1,11 @@
+User-agent: *
+Disallow:
+
+User-agent: LLMMetaBot
+Allow: /
+Disallow: /private/
+Crawl-delay: 2
+
+User-agent: LiveboltDataFetcher
+Allow: /
+Disallow:
